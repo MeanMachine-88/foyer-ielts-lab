@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parts 2 and 3 | IELTS Speaking Lab</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="top"><a class="brand" href="index.html"><span class="mark">W</span><span>IELTS Speaking Lab</span></a>
+<nav class="rooms"><a href="index.html" class="">Home</a><a href="chart.html" class="">Chart Room</a><a href="part1.html" class="">Part 1 Interview</a><a href="part2-3.html" class="on">Parts 2 &amp; 3</a></nav></header>
+<main>
+<section class="hero"><p class="eyebrow">Speaking Parts 2 &amp; 3</p>
+<h1>One minute to think.<br>Two minutes to talk.</h1>
+<p class="lead">Read the cue card, prepare quietly, then speak without stopping. After that your partner moves to Part 3 and asks deeper questions about the same theme.</p>
+<span class="pill">About 9 minutes · long turn + discussion</span>
+<div class="toc"><a href="#cue-card">Cue card</a><a href="#prep-timer">Prep timer</a><a href="#notes">Your notes</a><a href="#part3-topics">Part 3 topics</a><a href="#long-turn-map">Long-turn map</a><a href="#feedback-form">Self-feedback</a></div></section>
+
+<section class="card" id="cue-card"><span class="tag v">Part 2</span><h2>Your cue card</h2>
+<div class="cue"><h3>Describe a place where you like to study or read.</h3>
+<p style="margin:0 0 6px">You should say:</p><ul><li>where this place is</li><li>what it looks like</li><li>what you usually do there</li></ul><p style="margin:10px 0 0">and explain why this place is good for studying or reading.</p></div>
+<div class="prompt">Start with: “Hello, I am ready for Part 2.” Your partner will tell you when to start the timer.</div></section>
+
+<section class="card" id="prep-timer"><h2>Preparation timer</h2><p class="sub">The real test gives you one minute to prepare, and you may make notes. Then you speak for up to two minutes.</p>
+<div class="timer"><div class="clock" id="clock">01:00</div>
+<button class="btn" id="startPrep">Start 1-minute prep</button><button class="btn alt" id="startTalk">Start 2-minute talk</button><button class="btn alt" id="resetTimer">Reset</button></div>
+<p class="sub" id="timerMsg" style="margin-top:10px">Ready.</p></section>
+
+<section class="card" id="notes"><h2>Your notes</h2><p class="sub">Keywords only, not full sentences. Notes stay in this browser.</p>
+<textarea id="notesBox" placeholder="where: …   looks like: …   I do: …   why good: …"></textarea></section>
+
+<section class="grid2">
+<section class="card" id="long-turn-map"><h2>Long-turn map</h2><ol class="steps">
+<li><b>Open:</b> “The place I’d like to talk about is…”</li><li><b>Where:</b> location and how you found it</li>
+<li><b>Look:</b> two or three details you can see</li><li><b>Do:</b> a typical visit, step by step</li><li><b>Why:</b> two clear reasons, then a closing line</li></ol></section>
+<section class="card" id="part3-topics"><span class="tag">Part 3</span><h2>Discussion topics</h2><p class="sub">Your partner chooses questions from these two themes and asks follow-ups.</p>
+<p><b>Theme A · Places for learning</b></p><ul class="clean"><li>How have places for studying changed in the last twenty years?</li><li>Should schools spend more money on libraries or on technology?</li><li>Do people learn better in quiet places?</li></ul>
+<p><b>Theme B · Technology and study</b></p><ul class="clean"><li>Is online study as effective as studying in a classroom?</li><li>What are the risks of studying with a phone nearby?</li><li>How might studying look different in fifty years?</li></ul></section></section>
+
+<section class="card" id="feedback-form"><h2>Self-feedback checklist</h2><ul class="clean">
+<li>Did I speak for nearly two minutes in Part 2?</li><li>Did I answer all four points on the card?</li>
+<li>In Part 3, did I give opinions with reasons, not only facts?</li><li>Did I use <i>however, whereas, as a result</i> at least once?</li></ul></section>
+
+<script>
+(function(){
+ var clock=document.getElementById('clock'),msg=document.getElementById('timerMsg'),t=null,left=60;
+ function fmt(s){var m=Math.floor(s/60),r=s%60;return String(m).padStart(2,'0')+':'+String(r).padStart(2,'0')}
+ function run(sec,done,label){clearInterval(t);left=sec;clock.textContent=fmt(left);msg.textContent=label;
+  t=setInterval(function(){left--;clock.textContent=fmt(Math.max(left,0));if(left<=0){clearInterval(t);msg.textContent=done}},1000)}
+ document.getElementById('startPrep').onclick=function(){run(60,'Prep time is over. Press the voice button and start talking.','Preparing… write keywords only.')}
+ document.getElementById('startTalk').onclick=function(){run(120,'Two minutes finished. Your partner will move to Part 3.','Talking… keep going until the timer ends.')}
+ document.getElementById('resetTimer').onclick=function(){clearInterval(t);left=60;clock.textContent='01:00';msg.textContent='Ready.'}
+ var nb=document.getElementById('notesBox');nb.value=localStorage.getItem('ielts_notes')||'';nb.oninput=function(){localStorage.setItem('ielts_notes',nb.value)}
+})();
+</script>
+</main>
+<footer>Practice only. Not official IELTS material; no real score. Use a nickname only: do not say your full name, email, or phone number to the voice partner.</footer>
+<script src="https://api.foyer.ink/static/widget.js" data-agent-id="__AGENT_P23__" data-server="https://api.foyer.ink" async></script>
+</body></html>
